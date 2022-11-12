@@ -1,0 +1,15 @@
+/home/willi/Desktop/programas/c#/car/bin/Debug/net6.0/car
+/home/willi/Desktop/programas/c#/car/bin/Debug/net6.0/car.deps.json
+/home/willi/Desktop/programas/c#/car/bin/Debug/net6.0/car.runtimeconfig.json
+/home/willi/Desktop/programas/c#/car/bin/Debug/net6.0/car.dll
+/home/willi/Desktop/programas/c#/car/bin/Debug/net6.0/car.pdb
+/home/willi/Desktop/programas/c#/car/obj/Debug/net6.0/car.csproj.AssemblyReference.cache
+/home/willi/Desktop/programas/c#/car/obj/Debug/net6.0/car.GeneratedMSBuildEditorConfig.editorconfig
+/home/willi/Desktop/programas/c#/car/obj/Debug/net6.0/car.AssemblyInfoInputs.cache
+/home/willi/Desktop/programas/c#/car/obj/Debug/net6.0/car.AssemblyInfo.cs
+/home/willi/Desktop/programas/c#/car/obj/Debug/net6.0/car.csproj.CoreCompileInputs.cache
+/home/willi/Desktop/programas/c#/car/obj/Debug/net6.0/car.dll
+/home/willi/Desktop/programas/c#/car/obj/Debug/net6.0/refint/car.dll
+/home/willi/Desktop/programas/c#/car/obj/Debug/net6.0/car.pdb
+/home/willi/Desktop/programas/c#/car/obj/Debug/net6.0/car.genruntimeconfig.cache
+/home/willi/Desktop/programas/c#/car/obj/Debug/net6.0/ref/car.dll
