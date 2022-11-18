@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/home/willi/.nuget/packages/": {}
+    "C:\\Users\\willi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/willi/Desktop/programas/c#/json/json.csproj",
-      "projectName": "json",
-      "projectPath": "/home/willi/Desktop/programas/c#/json/json.csproj",
-      "packagesPath": "/home/willi/.nuget/packages/",
-      "outputPath": "/home/willi/Desktop/programas/c#/json/obj/",
+      "projectUniqueName": "C:\\Users\\willi\\Desktop\\programas\\CarDataBase\\CarDataBase.csproj",
+      "projectName": "CarDataBase",
+      "projectPath": "C:\\Users\\willi\\Desktop\\programas\\CarDataBase\\CarDataBase.csproj",
+      "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\willi\\Desktop\\programas\\CarDataBase\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/willi/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

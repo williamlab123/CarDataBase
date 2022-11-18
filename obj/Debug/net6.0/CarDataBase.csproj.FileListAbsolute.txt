@@ -1,0 +1,15 @@
+C:\Users\willi\Desktop\programas\CarDataBase\bin\Debug\net6.0\CarDataBase.exe
+C:\Users\willi\Desktop\programas\CarDataBase\bin\Debug\net6.0\CarDataBase.deps.json
+C:\Users\willi\Desktop\programas\CarDataBase\bin\Debug\net6.0\CarDataBase.runtimeconfig.json
+C:\Users\willi\Desktop\programas\CarDataBase\bin\Debug\net6.0\CarDataBase.dll
+C:\Users\willi\Desktop\programas\CarDataBase\bin\Debug\net6.0\CarDataBase.pdb
+C:\Users\willi\Desktop\programas\CarDataBase\obj\Debug\net6.0\CarDataBase.csproj.AssemblyReference.cache
+C:\Users\willi\Desktop\programas\CarDataBase\obj\Debug\net6.0\CarDataBase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\willi\Desktop\programas\CarDataBase\obj\Debug\net6.0\CarDataBase.AssemblyInfoInputs.cache
+C:\Users\willi\Desktop\programas\CarDataBase\obj\Debug\net6.0\CarDataBase.AssemblyInfo.cs
+C:\Users\willi\Desktop\programas\CarDataBase\obj\Debug\net6.0\CarDataBase.csproj.CoreCompileInputs.cache
+C:\Users\willi\Desktop\programas\CarDataBase\obj\Debug\net6.0\CarDataBase.dll
+C:\Users\willi\Desktop\programas\CarDataBase\obj\Debug\net6.0\refint\CarDataBase.dll
+C:\Users\willi\Desktop\programas\CarDataBase\obj\Debug\net6.0\CarDataBase.pdb
+C:\Users\willi\Desktop\programas\CarDataBase\obj\Debug\net6.0\CarDataBase.genruntimeconfig.cache
+C:\Users\willi\Desktop\programas\CarDataBase\obj\Debug\net6.0\ref\CarDataBase.dll
