@@ -1,17 +1,6 @@
-[
-    {"modelo":"gtr","ano":2004,"cor":"branco","marca":"nissan","placa":"123abc","completo":"sim","potencia":500},
-    {"modelo":"gol","ano":2023,"cor":"preto","marca":"volkswagen","placa":"23b4ab","completo":"sim","potencia":130},
-{"modelo":"enzo","ano":2015,"cor":"vermelho","marca":"ferrari","placa":"123456a","completo":"sim","potencia":700}
+"Carro 0"
+{"modelo":"12","ano":12,"cor":"12","marca":"12","placa":"12","completo":"12","potencia":12}
 
-
-
-
-
-
-]
-
-
-
-
-{"modelo":"292","ano":11,"cor":"11","marca":"292","placa":"1","completo":"11","potencia":1}
+"Carro 3"
+{"modelo":"12","ano":12,"cor":"12","marca":"12","placa":"12","completo":"1","potencia":2112}
 

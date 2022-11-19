@@ -7,7 +7,6 @@ using System.Collections.Generic;
 //using Newtonsoft.Json;
 
 
-Console.WriteLine("Hello, World!");
 Console.WriteLine("digite a marca do veiculo");
 string ma = Console.ReadLine();
 
@@ -58,43 +57,35 @@ int pot = int.Parse(Console.ReadLine());
 
             string filePath = @"C:\Users\willi\Desktop\programas\CarDataBase\data.json";
 
+            int car = 0;
+           
+             Console.WriteLine(car);
+
        
+                
+                
+                    List<string> lines = new List<string>();
+                    lines = File.ReadAllLines(filePath).ToList();
+    
+                    foreach (string line in lines)
+                    {
+                        Console.WriteLine(line);
+                        car++;
+               
+                  
+                     
+                    }
+          
 
-            
-            //     List<string> lines = new List<string>();
-            //     lines = File.ReadAllLines(filePath).ToList();
- 
-            //     foreach (string line in lines)
-            //     {
-            //         Console.WriteLine(line);
-            //     }
- 
-            //     lines.Add(jsonString);
-            //    // lines.Add();
-            //     lines.Add("");
-            //     File.WriteAllLines(filePath, lines);
+                     string qual = $"Carro {car}";    
+                     qual = JsonSerializer.Serialize(qual);
+                     lines.Add(qual);   
+                     lines.Add(jsonString);
+                    //  lines.Add();
+                       lines.Add("");
+                    File.WriteAllLines(filePath, lines);
 
-            string data = File.ReadAllText("YourFilePath"); // using System.IO
-
-        var array = await JsonSerializer.DeserializeAsync<Estoque[]>(data); // using System.Text.Json
-
-        if (array == null) {
-        // Error. Do something
-        return;
-        }
-
-        var list = new List<Estoque>(array); // using System.Collections.Generic
-
-        list.Add(estoque); // Add your new object
-
-        var newArray = list.ToArray();
-
-        string json = await JsonSerializer.SerializeAsync<Estoque[]>(newArray);
-
-        File.WriteAllText("YourFilePath", json);
-
-
-                         
+                            
 
                             
 
