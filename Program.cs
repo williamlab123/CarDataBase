@@ -1,109 +1,116 @@
-﻿using System.Text.Json;
-using System.IO;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-//using Newtonsoft.Json;
+﻿using MySql.Data.MySqlClient;
 
-
-Console.WriteLine("digite a marca do veiculo");
-string ma = Console.ReadLine();
-
-Console.WriteLine("digite o modelo do veiculo");
-string m = Console.ReadLine();
-
-Console.WriteLine("digite o ano do veiculo");
-int a = int.Parse(Console.ReadLine());
-
-Console.WriteLine("digite a cor do veiculo");
-string c = Console.ReadLine();
-
-Console.WriteLine("digite a placa");
-string p = Console.ReadLine();
-
-Console.WriteLine("digite se é completo ou nao");
-string com = Console.ReadLine();
-
-Console.WriteLine("digite a potencia do carro(cv)");
-int pot = int.Parse(Console.ReadLine());
-
-
-
- void Main()
-        {
-             var estoque = new Estoque
-            {
-              
-
-                modelo = m,
-                 ano = a,
-                  cor = c,
-                   marca = ma,
-                    placa = p,
-                     completo = com,
-                      potencia = pot
-
-            
-    
-            };
-
-
-            
-
-            string jsonString = JsonSerializer.Serialize(estoque);
-
-            Console.WriteLine(jsonString);
-
-            string filePath = @"C:\Users\willi\Desktop\programas\CarDataBase\data.json";
-
-            int car = 0;
-           
-             Console.WriteLine(car);
-
-       
-                
-                
-                    List<string> lines = new List<string>();
-                    lines = File.ReadAllLines(filePath).ToList();
-    
-                    foreach (string line in lines)
-                    {
-                        Console.WriteLine(line);
-                        car++;
-               
-                  
-                     
-                    }
-          
-
-                     string qual = $"Carro {car}";    
-                     qual = JsonSerializer.Serialize(qual);
-                     lines.Add(qual);   
-                     lines.Add(jsonString);
-                    //  lines.Add();
-                       lines.Add("");
-                    File.WriteAllLines(filePath, lines);
-
-                            
-
-                            
-
-              
-
-        } 
- 
-
- Main();
-        
-
-public class Estoque
+namespace CarDataBase
+{
+    class Program
     {
-        public string modelo { get; set; }
-        public int ano { get; set; }
-        public string cor { get; set; }
-        public string marca { get; set; }
-        public string  placa {get; set;} 
-        public string  completo {get; set;}
-        public int  potencia {get; set;}
+        static void Main(string[] args)
+        {
+            name();
+            msg(false);
+
+
+            string? input = Console.ReadLine();
+
+
+
+
+
+            switch (input)
+            {
+
+                case "connect":
+                    DatabaseHelper.ConnectToDatabase();
+                    Console.ReadKey();
+                    DatabaseHelper.addCar();
+                    System.Console.WriteLine("");
+                    System.Console.WriteLine("");
+                    break;
+
+
+                case "?":
+                    msg(true);
+
+                    break;
+
+                   case "addcar":
+                     
+                   break; 
+
+
+
+            }
+
+
+
+
+
+        }
+
+
+        static void name()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("   _  ___      __   __    ___  __   ");
+            Console.WriteLine("  / |/ (_)__ _/ /  / /_ / _ )/ /_ ___");
+            Console.WriteLine(" /    / / _ `/ _ \\/ __// _  / / // / -_)");
+            Console.WriteLine("/_/|_/_/\\_, /_//_/\\__//____/_/\\_,_/\\__/ ");
+            Console.WriteLine("       /___/                          ");
+            Console.ResetColor();
+
+
+        }
+
+        static void msg(bool ask)
+        {
+            System.Console.WriteLine("Type '?' to see all the options");
+            System.Console.WriteLine("Type 'connect' to connect to your DATABASE");
+
+
+            if (ask)
+            {
+                string[] options =
+                 {
+                    "To see all the specs of a car, type sID(Car's id)",
+                    "To add add car, type 'addcar",
+                    "To remove a car, type 'remcar",
+                    "To change the info about a car, type 'cinfocar",
+                    "To logout from your DataBase, type 'logout'",
+                    "To connect into a new DataBase, type 'new', then 'database'",
+                    "To show all the colluns from your DataBase, type 'collums'",
+                    "To show all the lines of your DataBase, type 'lines",
+                    "To show a specifit line or collum, type 'collum1,2,3' line1,2,3, etc",
+                    "To use a speficit funcion, use the name of the funcion",
+                    "To know the relaton Weight/HP, type 'WHP'",
+                    "To change a car's owner, type 'ccowner'",
+                    "To find a car by its ID, type 'fID'",
+                    "To see all the logs, type 'logs', to see only the last, type 'log'"
+
+                };
+
+                foreach (string opt in options)
+                {
+                    System.Console.WriteLine(opt);
+                }
+
+            }
+
+
+
+
+
+        }
+
+
+        static void getCar()
+        {
+
+           
+
+
+        }
+
     }
+
+}
