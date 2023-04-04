@@ -21,8 +21,8 @@ namespace CarDataBase
 
                 case "connect":
                     DatabaseHelper.ConnectToDatabase();
-                    Console.ReadKey();
-                    DatabaseHelper.addCar();
+                    //Console.ReadKey();
+                    //DatabaseHelper.addCar();
                     System.Console.WriteLine("");
                     System.Console.WriteLine("");
                     break;
@@ -34,8 +34,37 @@ namespace CarDataBase
                     break;
 
                    case "addcar":
+                   System.Console.WriteLine("Type the car's brand: ");
+                   string? brand = Console.ReadLine();
+
+                   System.Console.WriteLine("Type the car's model: ");
+                   string? model = Console.ReadLine();
+
+                   System.Console.WriteLine("Type the car's potence");
+                   int potence = int.Parse(Console.ReadLine());
+
+                   System.Console.WriteLine("Type the car's weight");
+                   int weight = int.Parse(Console.ReadLine());
+
+                   System.Console.WriteLine("Type the car's tork");
+                   int tork = int.Parse(Console.ReadLine());
+
+                   System.Console.WriteLine("Type the car's plate");
+                   string? plate = Console.ReadLine();
+                   
+
+                   DatabaseHelper.addCar(brand, model, potence, weight, tork, plate);
                      
                    break; 
+
+
+                   case "collums":
+                   DatabaseHelper.seeCollums();
+                   break;
+
+                   case "lines":
+                   DatabaseHelper.seeLines();
+                   break;
 
 
 
@@ -68,7 +97,7 @@ namespace CarDataBase
             System.Console.WriteLine("Type 'connect' to connect to your DATABASE");
 
 
-            if (ask)
+            if(ask)
             {
                 string[] options =
                  {
@@ -105,6 +134,8 @@ namespace CarDataBase
 
         static void getCar()
         {
+
+          Car carro1 = new Car();
 
            
 

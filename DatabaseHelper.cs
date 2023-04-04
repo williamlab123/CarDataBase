@@ -6,11 +6,13 @@ using System.Data;
 
 namespace CarDataBase
 {
+
     public static class DatabaseHelper
     {
+
         public static void ConnectToDatabase()
         {
-            
+
             string connectionString = "Server=localhost;Database=car;Uid=root;Pwd=12345;";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -20,21 +22,25 @@ namespace CarDataBase
                 System.Console.WriteLine("Database: " + connection.Database);
                 Console.ResetColor();
 
-                string sql = "INSERT INTO carros (marca, modelo, potencia) VALUES (@marca, @modelo, @potencia)";
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@marca", "Tesla");
-                cmd.Parameters.AddWithValue("@modelo", "Model s");
-                cmd.Parameters.AddWithValue("@potencia", "150");
+                System.Console.WriteLine("You're connected!");
 
-                int affectedRows = cmd.ExecuteNonQuery();
-                if (affectedRows > 0)
-                {
-                    Console.WriteLine("Informações adicionadas com sucesso.");
-                }
-                else
-                {
-                    Console.WriteLine("Falha ao adicionar informações.");
-                }
+
+
+                // string sql = "INSERT INTO carros (marca, modelo, potencia) VALUES (@marca, @modelo, @potencia)";
+                // MySqlCommand cmd = new MySqlCommand(sql, connection);
+                // cmd.Parameters.AddWithValue("@marca", "Tesla");
+                // cmd.Parameters.AddWithValue("@modelo", "Model s");
+                // cmd.Parameters.AddWithValue("@potencia", "150");
+
+                // int affectedRows = cmd.ExecuteNonQuery();
+                // if (affectedRows > 0)
+                // {
+                //     Console.WriteLine("Informações adicionadas com sucesso.");
+                // }
+                // else
+                // {
+                //     Console.WriteLine("Falha ao adicionar informações.");
+                // }
                 connection.Close();
 
                 connection.Open();
@@ -84,37 +90,43 @@ namespace CarDataBase
                 }
             }
         }
-        
-        class Carro
+
+        // class Carro
+        // {
+
+        //     public string Modelo { get; set; }
+        //     public string Marca { get; set; }
+        //     public string Potencia { get; set; }
+
+        //     public Carro(string modelo, string marca, string potencia)
+        //     {
+        //         Modelo = modelo;
+        //         Marca = marca;
+        //         Potencia = potencia;
+        //     }
+
+        // }
+
+        public static void addCar(string marca, string modelo, int potencia, int peso, int torque, string placa)
         {
-         
-            public string Modelo { get; set; }
-            public string Marca { get; set; }
-            public string Potencia { get; set; }
 
-            public Carro(string modelo, string marca, string potencia)
-            {
-                Modelo = modelo;
-                Marca = marca;
-                Potencia = potencia;
-            }
 
-        }
-
-        public static void addCar()
-        {
-             string connectionString = "Server=localhost;Database=car;Uid=root;Pwd=12345;";
+            string connectionString = "Server=localhost;Database=car;Uid=root;Pwd=12345;";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
                 Console.WriteLine("Conexão com o banco de dados MySQL estabelecida com sucesso.");
                 System.Console.WriteLine(connection.Database);
 
-                string sql = "INSERT INTO carros (marca, modelo, potencia) VALUES (@marca, @modelo, @potencia)";
+                string sql = "INSERT INTO carros (marca, modelo, potencia, peso, torque, placa) VALUES (@marca, @modelo, @potencia," +
+                "@peso, @torque, @placa)";
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.AddWithValue("@marca", "nissan");
-                cmd.Parameters.AddWithValue("@modelo", "gtr_skyline");
-                cmd.Parameters.AddWithValue("@potencia", "250");
+                cmd.Parameters.AddWithValue("@marca", marca);
+                cmd.Parameters.AddWithValue("@modelo", modelo);
+                cmd.Parameters.AddWithValue("@potencia", potencia);
+                cmd.Parameters.AddWithValue("@peso", peso);
+                cmd.Parameters.AddWithValue("@torque", torque);
+                cmd.Parameters.AddWithValue("@placa", placa);
 
                 int affectedRows = cmd.ExecuteNonQuery();
                 if (affectedRows > 0)
@@ -151,6 +163,65 @@ namespace CarDataBase
                 }
 
             }
+        }
+
+
+        public static void seeCollums()
+        {
+            string connectionString = "Server=localhost;Database=car;Uid=root;Pwd=12345;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+
+            {
+                connection.Open();
+
+                string tableName = "carros";
+                string query = $"DESCRIBE {tableName}";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        Console.WriteLine("Colunas da tabela '{0}':", tableName);
+                        while (reader.Read())
+                        {
+                            Console.WriteLine(reader.GetString(0));
+                        }
+                    }
+                }
+                connection.Close();
+            }
+        }
+
+
+        public static void seeLines()
+        {
+            string connectionString = "Server=localhost;Database=car;Uid=root;Pwd=12345;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string tableName = "carros";
+                string query = $"SELECT * FROM {tableName}";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Linhas da tabela '{0}':", tableName);
+                        while (reader.Read())
+                        {
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                Console.Write(reader[i] + " | " + "");
+                            }
+                            Console.WriteLine();
+                        }
+                    }
+                }
+                connection.Close();
+            }
+
         }
 
 

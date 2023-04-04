@@ -7,12 +7,12 @@ namespace CarDataBase
 {
     public class Car
     {
-        string? marca{get;set;}
-        string? modelo{get;set;}
-        int potencia{get;set;}
-        int peso{get;set;}
-        int torque{get;set;}
-        string? placa{get;set;}
+        string? Marca{get;set;}
+        string? Modelo{get;set;}
+        int Potencia{get;set;}
+        int Peso{get;set;}
+        int Torque{get;set;}
+        string? Placa{get;set;}
         
     }
 }
