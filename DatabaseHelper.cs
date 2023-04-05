@@ -225,6 +225,83 @@ namespace CarDataBase
         }
 
 
+        public static void findID()
+        {
+
+            System.Console.WriteLine("Type the car's ID: ");
+            int id = int.Parse(Console.ReadLine());
+
+
+            string connectionString = "Server=localhost;Database=car;Uid=root;Pwd=12345;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+
+                string tableName = "carros";
+                string query = $"SELECT * FROM carros WHERE id = {id}";
+                connection.Open();
+
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+                            Console.WriteLine("ID: " + reader["id"].ToString());
+                            Console.WriteLine("Marca: " + reader["marca"].ToString());
+                            Console.WriteLine("Modelo: " + reader["modelo"].ToString());
+                            Console.WriteLine("Potencia: " + reader["potencia"].ToString());
+                            Console.WriteLine("Peso: " + reader["peso"].ToString());
+                            Console.WriteLine("Torque: " + reader["torque"].ToString());
+                            Console.WriteLine("Placa: " + reader["placa"].ToString());
+
+                        }
+                    }
+                }
+
+
+
+
+
+            }
+        }
+
+
+        public static void deleteCarById()
+        {
+
+            System.Console.WriteLine("Type the car's ID you want to DELETE: ");
+            int id = int.Parse(Console.ReadLine());
+
+            string query = $"DELETE FROM carros WHERE id = {id}";
+
+            string connectionString = "Server=localhost;Database=car;Uid=root;Pwd=12345;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+            
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                  
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                   
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine($"Registro com ID {id} excluído com sucesso.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Nenhum registro encontrado com o ID {id}.");
+                    }
+                }
+            }
+        }
+
+
     }
 }
 
