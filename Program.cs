@@ -47,8 +47,11 @@ namespace CarDataBase
                     break;
 
                 case "addcar":
+
+                  
                     System.Console.WriteLine("Type the car's brand: ");
                     string? brand = Console.ReadLine();
+
 
                     System.Console.WriteLine("Type the car's model: ");
                     string? model = Console.ReadLine();
@@ -68,6 +71,11 @@ namespace CarDataBase
 
                     DatabaseHelper.addCar(brand, model, potence, weight, tork, plate);
                       //Main();
+
+                      CreateCar(brand, model, potence, weight, tork, plate);
+
+
+
 
 
                     break;
@@ -215,10 +223,31 @@ namespace CarDataBase
         }
 
 
-        static void getCar()
+        static void CreateCar(string marca, string modelo, int potencia, int peso, int torque, string placa)
         {
+             Car carro1 = new Car();
 
-            //Car carro1 = new Car();
+                carro1.Marca = marca;
+                carro1.Modelo = modelo;
+                carro1.Potencia = potencia;
+                carro1.Peso = peso;
+                carro1.Torque = torque;
+                carro1.Placa = placa;
+
+
+            
+            string serializer = carro1.ToString();
+
+
+          
+
+
+            serializer = JsonSerializer.Serialize(serializer);
+
+
+                
+          
+
 
 
 
@@ -228,7 +257,9 @@ namespace CarDataBase
 
         static void saveJson()
         {
-            Car carro1 = new Car();
+           
+            
+        
         }
 
     }
