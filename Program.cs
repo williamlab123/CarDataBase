@@ -1,5 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
+using System.Text.Json;
+using System.IO;
+using System.Text;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace CarDataBase
 {
@@ -7,8 +12,10 @@ namespace CarDataBase
     {
         static void Main()
         {
+           
 
 
+          
           start(true);
          
 
@@ -105,6 +112,36 @@ namespace CarDataBase
                      // Main();
 
                     break;
+
+
+                case "logs":
+                    string filePath = @"F:\programas\CarDataBase\db.json";
+
+
+                    string allText = File.ReadAllText(filePath);
+                    System.Console.WriteLine(allText);
+
+                    break;
+
+
+                    case "dellogs":
+
+                  filePath = @"F:\programas\CarDataBase\db.json";
+                   
+                    System.Console.WriteLine("Are you sure you want do DELETE all your LOGS?[y][n]");
+                    string yn = Console.ReadLine();
+                    if(yn.ToLower() == "y")
+                    {
+                      File.WriteAllText(filePath, string.Empty);
+                      System.Console.WriteLine("All your LOGS have been deleted");
+                    }
+
+                    else
+                    {
+                        System.Console.WriteLine("Canceling");
+                    }
+                    break;
+
 
 
 
@@ -205,7 +242,8 @@ namespace CarDataBase
                     "To know the relaton Weight/HP, type 'WHP'",
                     "To change a car's owner, type 'ccowner'",
                     "To find a car by its ID, type 'fID'",
-                    "To see all the logs, type 'logs', to see only the last, type 'log'"
+                    "To see all the logs, type 'logs', to see only the last, type 'log'",
+                    "To erase the logs, type dellogs"
 
                 };
 
@@ -234,33 +272,33 @@ namespace CarDataBase
                 carro1.Torque = torque;
                 carro1.Placa = placa;
 
+            var objetoCompleto = new
+            {
+                Carro_Adicionado = carro1
 
-            
-            string serializer = carro1.ToString();
+            };
 
-
-          
-
-
-            serializer = JsonSerializer.Serialize(serializer);
-
-
-                
-          
+            string jsonString = JsonSerializer.Serialize(objetoCompleto, new JsonSerializerOptions { WriteIndented = true });
+            string filePath = @"F:\programas\CarDataBase\db.json";
 
 
+          string allText = File.ReadAllText(filePath);
+
+         
+
+
+             allText += jsonString;
+
+
+            File.WriteAllText(filePath, allText);
+         
 
 
 
         }
 
 
-        static void saveJson()
-        {
-           
-            
-        
-        }
+       
 
     }
 

@@ -1,8 +1,14 @@
+" O carro 60 foi deletado excluido sucesso"
+" O carro 59 foi deletado excluido sucesso"
+"Tentativa de excluir o carro 58 falha. Id nao encontrado"
+" O carro 57 foi deletado excluido sucesso"
 {
-    "cars":
-    {
-        "potencia": 250,
-        "marca": "nissan",
-        "modelo": "gtr_skyline"
-    }
+  "Carro_Adicionado": {
+    "Marca": "volkswagen",
+    "Modelo": "fusca",
+    "Potencia": 90,
+    "Peso": 900,
+    "Torque": 20,
+    "Placa": "3ijnj45n"
+  }
 }

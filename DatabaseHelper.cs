@@ -1,6 +1,13 @@
 using System;
 using MySql.Data.MySqlClient;
 using System.Data;
+//using Newtonsoft.Json;
+using System.Text.Json;
+using System.IO;
+using System.Text;
+using System.Linq;
+using System.Collections.Generic;
+
 // using Newtonsoft.Json;
 
 
@@ -270,7 +277,12 @@ namespace CarDataBase
 
 
         public static void deleteCarById()
-        {
+        { 
+              string filePath = @"F:\programas\CarDataBase\db.json";
+              string is_deleted;
+              string allText = File.ReadAllText(filePath);
+         
+
 
             System.Console.WriteLine("Type the car's ID you want to DELETE: ");
             int id = int.Parse(Console.ReadLine());
@@ -292,13 +304,32 @@ namespace CarDataBase
                     if (rowsAffected > 0)
                     {
                         Console.WriteLine($"Registro com ID {id} excluído com sucesso.");
+                        is_deleted = $" O carro {id} foi deletado excluido sucesso";
+
+                       is_deleted = JsonSerializer.Serialize(is_deleted, new JsonSerializerOptions { WriteIndented = true });
+                       allText += is_deleted + Environment.NewLine;
+                      
+                         File.WriteAllText(filePath, allText);
+
+                          
                     }
                     else
                     {
                         Console.WriteLine($"Nenhum registro encontrado com o ID {id}.");
+                         is_deleted = $"Tentativa de excluir o carro {id} falha. Id nao encontrado";
+                          is_deleted = JsonSerializer.Serialize(is_deleted, new JsonSerializerOptions { WriteIndented = true });
+                          allText += is_deleted + Environment.NewLine;
+                         
+                          File.WriteAllText(filePath, allText);
+
                     }
                 }
             }
+
+            
+
+
+
         }
 
 
