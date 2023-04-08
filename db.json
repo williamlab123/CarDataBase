@@ -11,4 +11,88 @@
     "Torque": 20,
     "Placa": "3ijnj45n"
   }
-}
+}{
+  "Carro_Adicionado": {
+    "Marca": "citroen",
+    "Modelo": "c3",
+    "Potencia": 3400,
+    "Peso": 3000,
+    "Torque": 450,
+    "Placa": "2395ji"
+  }
+}{
+  "Carro_Adicionado": {
+    "Marca": "lamborghini",
+    "Modelo": "veneno",
+    "Potencia": 1000,
+    "Peso": 1500,
+    "Torque": 40,
+    "Placa": "lilyth"
+  }
+}" O carro 2 foi deletado excluido sucesso"
+{
+  "Carro_Adicionado": {
+    "Marca": "toyota",
+    "Modelo": "supra",
+    "Potencia": 600,
+    "Peso": 1300,
+    "Torque": 25,
+    "Placa": "k35jh5"
+  }
+}"Tentativa de excluir o carro 2 falha. Id nao encontrado"
+{
+  "Carro_Adicionado": {
+    "Marca": "mitisubishi",
+    "Modelo": "eclipse",
+    "Potencia": 300,
+    "Peso": 1400,
+    "Torque": 4500,
+    "Placa": "rk3hj"
+  }
+}{
+  "Carro_Adicionado": {
+    "Marca": "chevrole",
+    "Modelo": "camaro",
+    "Potencia": 300,
+    "Peso": 2000,
+    "Torque": 30,
+    "Placa": "345h4uj5"
+  }
+}" O carro 5 foi deletado excluido sucesso"
+{
+  "Carro_Adicionado": {
+    "Marca": "Chevrolet",
+    "Modelo": "camaro",
+    "Potencia": 300,
+    "Peso": 1400,
+    "Torque": 34,
+    "Placa": "3kn55"
+  }
+}{
+  "Carro_Adicionado": {
+    "Marca": "Chevrolet",
+    "Modelo": "camaro",
+    "Potencia": 350,
+    "Peso": 4500,
+    "Torque": 355,
+    "Placa": "3445n"
+  }
+}{
+  "Carro_Adicionado": {
+    "Marca": "Pagani",
+    "Modelo": "pagani 308",
+    "Potencia": 600,
+    "Peso": 1600,
+    "Torque": 23,
+    "Placa": "34545h"
+  }
+}{
+  "Carro_Adicionado": {
+    "Marca": "BMW",
+    "Modelo": "m3",
+    "Potencia": 300,
+    "Peso": 1400,
+    "Torque": 25,
+    "Placa": "34jihj5"
+  }
+}" O carro 6 foi deletado excluido sucesso"

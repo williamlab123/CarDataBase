@@ -215,7 +215,9 @@ namespace CarDataBase
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
                         Console.Clear();
+                       
                         Console.WriteLine("Linhas da tabela '{0}':", tableName);
+                         System.Console.WriteLine("MARCA  MODELO  POTENCIA  PESO  TORQUE  COR  ANO  MOTOR  PLACA  ID");
                         while (reader.Read())
                         {
                             for (int i = 0; i < reader.FieldCount; i++)

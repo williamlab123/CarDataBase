@@ -12,18 +12,18 @@ namespace CarDataBase
     {
         static void Main()
         {
-           
 
 
-          
-          start(true);
-         
+
+
+            start(true);
+
 
 
             string? input = Console.ReadLine();
 
 
-        
+
 
 
 
@@ -41,7 +41,7 @@ namespace CarDataBase
                     break;
 
 
-                    case "exit":
+                case "exit":
                     System.Console.WriteLine("Shutting Down");
                     Environment.Exit(0);
                     break;
@@ -49,15 +49,35 @@ namespace CarDataBase
 
                 case "?":
                     msg(true);
-                   // Main();
+                    // Main();
 
                     break;
 
                 case "addcar":
 
-                  
+
+
+
                     System.Console.WriteLine("Type the car's brand: ");
                     string? brand = Console.ReadLine();
+                    // criando uma instância da classe Levenshtein
+                    Levenshtein Levenshtein = new Levenshtein();
+
+                    // chamando o método LevenshteinDistance e armazenando o valor retornado na variável corrigida
+                    string corrigida = Levenshtein.LevenshteinDistance(brand);
+
+                    // atribuindo a variável corrigida à variável brand
+                    brand = corrigida;
+
+
+                    Levenshtein.LevenshteinDistance(brand);
+
+                    brand = corrigida;
+
+
+
+
+
 
 
                     System.Console.WriteLine("Type the car's model: ");
@@ -77,9 +97,9 @@ namespace CarDataBase
 
 
                     DatabaseHelper.addCar(brand, model, potence, weight, tork, plate);
-                      //Main();
+                    //Main();
 
-                      CreateCar(brand, model, potence, weight, tork, plate);
+                    CreateCar(brand, model, potence, weight, tork, plate);
 
 
 
@@ -90,26 +110,26 @@ namespace CarDataBase
 
                 case "collums":
                     DatabaseHelper.seeCollums();
-                     // Main();
+                    // Main();
 
                     break;
 
                 case "lines":
                     DatabaseHelper.seeLines();
-                     // Main();
+                    // Main();
 
                     break;
 
                 case "sID":
 
                     DatabaseHelper.findID();
-                     // Main();
+                    // Main();
 
                     break;
 
                 case "delcar":
                     DatabaseHelper.deleteCarById();
-                     // Main();
+                    // Main();
 
                     break;
 
@@ -124,16 +144,16 @@ namespace CarDataBase
                     break;
 
 
-                    case "dellogs":
+                case "dellogs":
 
-                  filePath = @"F:\programas\CarDataBase\db.json";
-                   
+                    filePath = @"F:\programas\CarDataBase\db.json";
+
                     System.Console.WriteLine("Are you sure you want do DELETE all your LOGS?[y][n]");
                     string yn = Console.ReadLine();
-                    if(yn.ToLower() == "y")
+                    if (yn.ToLower() == "y")
                     {
-                      File.WriteAllText(filePath, string.Empty);
-                      System.Console.WriteLine("All your LOGS have been deleted");
+                        File.WriteAllText(filePath, string.Empty);
+                        System.Console.WriteLine("All your LOGS have been deleted");
                     }
 
                     else
@@ -156,8 +176,8 @@ namespace CarDataBase
 
         static void start(bool start)
         {
-               name();
-             msg(false);
+            name();
+            msg(false);
         }
 
 
@@ -186,35 +206,35 @@ namespace CarDataBase
             string line5 = "       /___/                          ";
 
             int left1 = (screenWidth - line1.Length) / 2;
-             int left2 = (screenWidth - line2.Length) / 2;
-              int left3 = (screenWidth - line3.Length) / 2;
-               int left4 = (screenWidth - line4.Length) / 2;
-                int left5 = (screenWidth - line5.Length) / 2;
+            int left2 = (screenWidth - line2.Length) / 2;
+            int left3 = (screenWidth - line3.Length) / 2;
+            int left4 = (screenWidth - line4.Length) / 2;
+            int left5 = (screenWidth - line5.Length) / 2;
 
 
 
-            
+
             Console.SetCursorPosition(left1, Console.CursorTop);
-             Console.WriteLine(line1);
-              Thread.Sleep(300);
+            Console.WriteLine(line1);
+            Thread.Sleep(300);
 
             Console.SetCursorPosition(left2, Console.CursorTop);
-             Console.WriteLine(line2);
-              Thread.Sleep(300);
+            Console.WriteLine(line2);
+            Thread.Sleep(300);
 
             Console.SetCursorPosition(left3, Console.CursorTop);
-             Console.WriteLine(line3);
-              Thread.Sleep(300);
+            Console.WriteLine(line3);
+            Thread.Sleep(300);
 
             Console.SetCursorPosition(left4, Console.CursorTop);
-             Console.WriteLine(line4);
-              Thread.Sleep(300);
+            Console.WriteLine(line4);
+            Thread.Sleep(300);
 
             Console.SetCursorPosition(left5, Console.CursorTop);
-             Console.WriteLine(line5);
-              Thread.Sleep(300);
+            Console.WriteLine(line5);
+            Thread.Sleep(300);
 
-              Console.ResetColor();
+            Console.ResetColor();
 
 
         }
@@ -263,14 +283,14 @@ namespace CarDataBase
 
         static void CreateCar(string marca, string modelo, int potencia, int peso, int torque, string placa)
         {
-             Car carro1 = new Car();
+            Car carro1 = new Car();
 
-                carro1.Marca = marca;
-                carro1.Modelo = modelo;
-                carro1.Potencia = potencia;
-                carro1.Peso = peso;
-                carro1.Torque = torque;
-                carro1.Placa = placa;
+            carro1.Marca = marca;
+            carro1.Modelo = modelo;
+            carro1.Potencia = potencia;
+            carro1.Peso = peso;
+            carro1.Torque = torque;
+            carro1.Placa = placa;
 
             var objetoCompleto = new
             {
@@ -282,23 +302,23 @@ namespace CarDataBase
             string filePath = @"F:\programas\CarDataBase\db.json";
 
 
-          string allText = File.ReadAllText(filePath);
-
-         
+            string allText = File.ReadAllText(filePath);
 
 
-             allText += jsonString;
+
+
+            allText += jsonString;
 
 
             File.WriteAllText(filePath, allText);
-         
+
 
 
 
         }
 
 
-       
+
 
     }
 
