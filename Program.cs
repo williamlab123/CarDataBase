@@ -20,19 +20,25 @@ namespace CarDataBase
 
 
 
-            string? input = Console.ReadLine();
+            string input = Console.ReadLine();
 
 
 
 
+                   Levenshtein Levenshtein = new Levenshtein();
+                    Levenshtein.LevenshteinDistance(input, 2);
 
+                     string corrigida1 = Levenshtein.LevenshteinDistance(input, 2);
+
+                     input = corrigida1;
 
 
 
             switch (input)
             {
-
+               
                 case "connect":
+             
                     DatabaseHelper.ConnectToDatabase();
                     //Console.ReadKey();
                     //DatabaseHelper.addCar();
@@ -42,6 +48,7 @@ namespace CarDataBase
 
 
                 case "exit":
+              
                     System.Console.WriteLine("Shutting Down");
                     Environment.Exit(0);
                     break;
@@ -55,22 +62,23 @@ namespace CarDataBase
 
                 case "addcar":
 
-
-
+                    
+                   
+                  
 
                     System.Console.WriteLine("Type the car's brand: ");
-                    string? brand = Console.ReadLine();
-                    // criando uma instância da classe Levenshtein
-                    Levenshtein Levenshtein = new Levenshtein();
+                    string brand = Console.ReadLine();
+                   
+                   
 
-                    // chamando o método LevenshteinDistance e armazenando o valor retornado na variável corrigida
-                    string corrigida = Levenshtein.LevenshteinDistance(brand);
 
-                    // atribuindo a variável corrigida à variável brand
+                    string corrigida = Levenshtein.LevenshteinDistance(brand, 1);
+
+                   
                     brand = corrigida;
 
 
-                    Levenshtein.LevenshteinDistance(brand);
+                    Levenshtein.LevenshteinDistance(brand, 1);
 
                     brand = corrigida;
 
@@ -81,7 +89,7 @@ namespace CarDataBase
 
 
                     System.Console.WriteLine("Type the car's model: ");
-                    string? model = Console.ReadLine();
+                    string model = Console.ReadLine();
 
                     System.Console.WriteLine("Type the car's potence");
                     int potence = int.Parse(Console.ReadLine());
@@ -93,7 +101,7 @@ namespace CarDataBase
                     int tork = int.Parse(Console.ReadLine());
 
                     System.Console.WriteLine("Type the car's plate");
-                    string? plate = Console.ReadLine();
+                    string plate = Console.ReadLine();
 
 
                     DatabaseHelper.addCar(brand, model, potence, weight, tork, plate);

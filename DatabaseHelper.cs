@@ -245,7 +245,7 @@ namespace CarDataBase
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
 
-                string tableName = "carros";
+                //string tableName = "carros";
                 string query = $"SELECT * FROM carros WHERE id = {id}";
                 connection.Open();
 

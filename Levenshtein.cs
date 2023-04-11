@@ -7,9 +7,9 @@ namespace CarDataBase
 {
     public class Levenshtein
     {
-        public static string LevenshteinDistance(string _brand)
+        public static string LevenshteinDistance(string _brand, int choose)
         {
-           
+
             string[] marcas = {
                     "Acura",
                     "Alfa Romeo",
@@ -39,6 +39,7 @@ namespace CarDataBase
                     "Koenigsegg",
                     "Lamborghini",
                     "Land Rover",
+                    "Rand Rover",
                     "Lexus",
                     "Lincoln",
                     "Lotus",
@@ -63,63 +64,158 @@ namespace CarDataBase
                     "Volkswagen",
                     "Volvo"
         };
+            string[] options = {
+                    "addcar",
+                    "sID",
+                    "logs",
+                    "ccowner",
+                    "delcar",
+                    "lines",
+                    "collums",
+                    "dellogs"
+
+        };
 
 
-            string palavra = _brand;
-            if (!marcas.Contains(palavra))
+            if (choose == 1)
             {
-                int distanciaMaxima = 4;
-                string corrigida = null;
-                int menorDistancia = int.MaxValue;
+                string palavra = _brand;
 
-                foreach (string marca in marcas)
+
+                if(marcas.Contains(palavra))
                 {
-                    int distancia = DistanciaLevenshtein(palavra, marca);
-                    if (distancia <= distanciaMaxima && distancia < menorDistancia)
-                    {
-                        corrigida = marca;
-                        menorDistancia = distancia;
-                    }
+                 return palavra;
                 }
 
-                if (corrigida != null)
+                if (!marcas.Contains(palavra))
                 {
-                    
-                    
-                    Console.Write("Você quis dizer ");
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    System.Console.Write(corrigida + " ?");
-                    Console.ResetColor();
-                    ConsoleKeyInfo keyInfo = Console.ReadKey();
-                    if(keyInfo.Key == ConsoleKey.Enter)
+                    int distanciaMaxima = 4;
+                    string corrigida = null;
+                    int menorDistancia = int.MaxValue;
+
+                    foreach (string marca in marcas)
                     {
-                           return corrigida;
+                        int distancia = DistanciaLevenshtein(palavra, marca);
+                        if (distancia <= distanciaMaxima && distancia < menorDistancia)
+                        {
+                            corrigida = marca;
+                            menorDistancia = distancia;
+                        }
                     }
 
+                    if (corrigida != null)
+                    {
+
+
+                        Console.Write("Você quis dizer ");
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        System.Console.Write(corrigida + " ?");
+                        Console.ResetColor();
+                        ConsoleKeyInfo keyInfo = Console.ReadKey();
+                        if (keyInfo.Key == ConsoleKey.Enter)
+                        {
+                            return corrigida;
+                        }
+
+                        else
+                        {
+
+                            return corrigida = null;
+                        }
+
+
+
+                    }
                     else
                     {
-                        
+
                         return corrigida = null;
                     }
-
-                  
-                    
                 }
                 else
                 {
-                   
-                   return corrigida = null;
+
+                    return "";
                 }
+
+
+
+
+
             }
+
+            else if (choose == 2)
+            {
+                   string palavra = _brand;
+                if (options.Contains(palavra))
+                {
+                    return palavra;
+                }
+              
+                if (!options.Contains(palavra))
+                {
+                    int distanciaMaxima = 4;
+                    string corrigida = null;
+                    int menorDistancia = int.MaxValue;
+
+                    foreach (string opt in options)
+                    {
+                        int distancia = DistanciaLevenshtein(palavra, opt);
+                        if (distancia <= distanciaMaxima && distancia < menorDistancia)
+                        {
+                            corrigida = opt;
+                            menorDistancia = distancia;
+                        }
+                    }
+
+                    if (corrigida != null)
+                    {
+
+
+                        Console.Write("Você quis dizer ");
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        System.Console.Write(corrigida + " ?");
+                        Console.ResetColor();
+                        ConsoleKeyInfo keyInfo = Console.ReadKey();
+                        if (keyInfo.Key == ConsoleKey.Enter)
+                        {
+                            return corrigida;
+                        }
+
+                        else
+                        {
+
+                            return corrigida = null;
+                        }
+
+
+
+                    }
+                    else
+                    {
+
+                        return corrigida = null;
+                    }
+                }
+                else
+                {
+
+                    return "";
+                }
+
+            }
+
+
             else
             {
-             
-               return "";
+  
+                System.Console.WriteLine("valor inválido");
+                return "";
             }
 
-            
         }
 
+     
         static int DistanciaLevenshtein(string s, string t)
         {
             int[,] d = new int[s.Length + 1, t.Length + 1];

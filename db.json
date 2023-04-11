@@ -96,3 +96,41 @@
     "Placa": "34jihj5"
   }
 }" O carro 6 foi deletado excluido sucesso"
+{
+  "Carro_Adicionado": {
+    "Marca": "Toyota",
+    "Modelo": "gt starlet",
+    "Potencia": 300,
+    "Peso": 1100,
+    "Torque": 21,
+    "Placa": "3j5ij5kj"
+  }
+}{
+  "Carro_Adicionado": {
+    "Marca": "BMW",
+    "Modelo": "m5",
+    "Potencia": 500,
+    "Peso": 1500,
+    "Torque": 34,
+    "Placa": "weo3k5"
+  }
+}" O carro 3 foi deletado excluido sucesso"
+{
+  "Carro_Adicionado": {
+    "Marca": "McLaren",
+    "Modelo": "Sena",
+    "Potencia": 50000,
+    "Peso": 2000,
+    "Torque": 40,
+    "Placa": "i5jkj6"
+  }
+}{
+  "Carro_Adicionado": {
+    "Marca": "Mazda",
+    "Modelo": "rx7",
+    "Potencia": 300,
+    "Peso": 1200,
+    "Torque": 26,
+    "Placa": "3ijn5ikj5"
+  }
+}
