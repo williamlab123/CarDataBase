@@ -149,25 +149,25 @@ namespace CarDataBase
                 connection.Open();
 
 
-                using (MySqlConnection connect = new MySqlConnection(connectionString))
-                {
-                    //connection.Open();
+                // using (MySqlConnection connect = new MySqlConnection(connectionString))
+                // {
+                //     //connection.Open();
 
-                    string tableName = "carros";
-                    string query = $"DESCRIBE {tableName}";
+                //     string tableName = "carros";
+                //     string query = $"DESCRIBE {tableName}";
 
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    {
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            Console.WriteLine("Colunas da tabela '{0}':", tableName);
-                            while (reader.Read())
-                            {
-                                Console.WriteLine(reader.GetString(0));
-                            }
-                        }
-                    }
-                }
+                //     using (MySqlCommand command = new MySqlCommand(query, connection))
+                //     {
+                //         using (MySqlDataReader reader = command.ExecuteReader())
+                //         {
+                //             Console.WriteLine("Colunas da tabela '{0}':", tableName);
+                //             while (reader.Read())
+                //             {
+                //                 Console.WriteLine(reader.GetString(0));
+                //             }
+                //         }
+                //     }
+                // }
 
             }
         }

@@ -133,4 +133,22 @@
     "Torque": 26,
     "Placa": "3ijn5ikj5"
   }
-}
+}{
+  "Carro_Adicionado": {
+    "Marca": "BMW",
+    "Modelo": "a5",
+    "Potencia": 340,
+    "Peso": 3400,
+    "Torque": 40,
+    "Placa": "34hiji"
+  }
+}{
+  "Carro_Adicionado": {
+    "Marca": "Chevrolet",
+    "Modelo": "onix",
+    "Potencia": 90,
+    "Peso": 110,
+    "Torque": 18,
+    "Placa": "23jh4uj"
+  }
+}" O carro 3 foi deletado excluido sucesso"
