@@ -72,7 +72,8 @@ namespace CarDataBase
                     "delcar",
                     "lines",
                     "collums",
-                    "dellogs"
+                    "dellogs",
+                    "?"
 
         };
 

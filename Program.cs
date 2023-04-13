@@ -6,17 +6,35 @@ using System.Text;
 using System.Linq;
 using System.Collections.Generic;
 
+
 namespace CarDataBase
 {
+
     class Program
     {
+
+        public static int abc = 0;
+
         static void Main()
         {
 
 
+            if (abc == 0)
+            {
+                start(true);
+            }
+
+            abc++;
 
 
-            start(true);
+
+
+
+
+
+
+
+
 
 
 
@@ -25,20 +43,20 @@ namespace CarDataBase
 
 
 
-                   Levenshtein Levenshtein = new Levenshtein();
-                    Levenshtein.LevenshteinDistance(input, 2);
+            Levenshtein Levenshtein = new Levenshtein();
+            Levenshtein.LevenshteinDistance(input, 2);
 
-                     string corrigida1 = Levenshtein.LevenshteinDistance(input, 2);
+            string corrigida1 = Levenshtein.LevenshteinDistance(input, 2);
 
-                     input = corrigida1;
+            input = corrigida1;
 
 
 
             switch (input)
             {
-               
+
                 case "connect":
-             
+
                     DatabaseHelper.ConnectToDatabase();
                     //Console.ReadKey();
                     //DatabaseHelper.addCar();
@@ -48,7 +66,7 @@ namespace CarDataBase
 
 
                 case "exit":
-              
+
                     System.Console.WriteLine("Shutting Down");
                     Environment.Exit(0);
                     break;
@@ -56,25 +74,25 @@ namespace CarDataBase
 
                 case "?":
                     msg(true);
-                    // Main();
+                    Main();
 
                     break;
 
                 case "addcar":
 
-                    
-                   
-                  
+
+
+
 
                     System.Console.WriteLine("Type the car's brand: ");
                     string brand = Console.ReadLine();
-                   
-                   
+
+
 
 
                     string corrigida = Levenshtein.LevenshteinDistance(brand, 1);
 
-                   
+
                     brand = corrigida;
 
 
@@ -105,9 +123,8 @@ namespace CarDataBase
 
 
                     DatabaseHelper.addCar(brand, model, potence, weight, tork, plate);
-                    //Main();
-
                     CreateCar(brand, model, potence, weight, tork, plate);
+                    Main();
 
 
 
@@ -118,26 +135,26 @@ namespace CarDataBase
 
                 case "collums":
                     DatabaseHelper.seeCollums();
-                    // Main();
+                    Main();
 
                     break;
 
                 case "lines":
                     DatabaseHelper.seeLines();
-                    // Main();
+                    Main();
 
                     break;
 
                 case "sID":
 
                     DatabaseHelper.findID();
-                    // Main();
+                    Main();
 
                     break;
 
                 case "delcar":
                     DatabaseHelper.deleteCarById();
-                    // Main();
+                    Main();
 
                     break;
 
@@ -184,8 +201,13 @@ namespace CarDataBase
 
         static void start(bool start)
         {
+
             name();
             msg(false);
+
+
+
+
         }
 
 
@@ -249,12 +271,14 @@ namespace CarDataBase
 
         static void msg(bool ask)
         {
+        
             System.Console.WriteLine("Type '?' to see all the options");
             System.Console.WriteLine("Type 'connect' to connect to your DATABASE");
 
 
             if (ask)
             {
+                Console.Clear();
                 string[] options =
                  {
                     "To see all the specs of a car, type sID(Car's id)",
@@ -270,7 +294,7 @@ namespace CarDataBase
                     "To know the relaton Weight/HP, type 'WHP'",
                     "To change a car's owner, type 'ccowner'",
                     "To find a car by its ID, type 'fID'",
-                    "To see all the logs, type 'logs', to see only the last, type 'log'",
+                    "To see all the logs, type 'logs'",
                     "To erase the logs, type dellogs"
 
                 };
