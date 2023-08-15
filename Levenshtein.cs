@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CarDataBase
 {
-    public class Levenshtein
+        public class Levenshtein
     {
         public static string LevenshteinDistance(string _brand, int choose)
         {
@@ -77,11 +77,9 @@ namespace CarDataBase
 
         };
 
-
             if (choose == 1)
             {
                 string palavra = _brand;
-
 
                 if(marcas.Contains(palavra))
                 {
